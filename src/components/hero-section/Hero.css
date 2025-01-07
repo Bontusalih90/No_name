@@ -1,0 +1,102 @@
+.hero-section{
+    background-image: url(../../assets/images/services-background.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    color: white;
+    
+}
+.hero{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   padding: 30px;
+  
+}
+.hero-content{
+    width: 100%;
+    
+}
+.hero-video {
+    opacity: 0.1;
+    width: 100%;
+    border-radius: 50px;
+    height: 350px;
+    object-fit: fill;
+    opacity: 0.9;
+     transform: translateY(20px); 
+      animation: fedUp 1s forwards;
+}
+
+.hero button{
+    padding: 10px 20px;
+    background: transparent;
+    background-color: rgb(24, 43, 75);
+    color: #47dcf3;
+    font-weight: 500;
+    border: 2px #118C9E solid;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(101, 158, 255, 0.336),
+     0 6px 20px rgba(140, 179, 247, 0.37); 
+     border-radius: 5px;
+     opacity: 0; 
+     transform: translateY(20px); 
+      animation: fedUp 1s forwards;
+}
+.hero button{
+    animation-delay: 0.2s;
+}
+@keyframes fedUp { 
+    to { opacity: 1; 
+         transform: translateY(0); } }
+
+         .hero-content h3{
+    color:  #2bd0e9;
+    
+}
+.hero-content h3, h1, p{
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fedUp 1s forwards;
+}
+@media (max-width: 375px){
+    .hero-section {
+        height: 110vh;
+    }
+}
+@media (max-width: 768px){
+    .hero-section .hero{
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .hero-content{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .hero button{
+        background-color: rgb(24, 43, 75);
+        color: #47dcf3;
+    }
+}
+@media (max-width: 1060px){
+    .hero-section .hero{
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .hero-content{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .hero button{
+        background-color: rgb(24, 43, 75);
+        color: #47dcf3;
+    }
+}
+

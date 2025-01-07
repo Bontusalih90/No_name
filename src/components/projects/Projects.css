@@ -1,0 +1,102 @@
+.projects-section{
+    background-image: url(../../assets/images/services.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+    color: white;
+}
+.projects-section h1{
+    text-align: center;
+    padding: 10px;
+    color:#ffffff;
+    text-decoration: underline;
+}
+.project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.background-img1{
+    width: 300px;
+    background-color: #118C9E;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(101, 158, 255, 0.336),
+    0 6px 20px rgba(208, 215, 228, 0.651); 
+    animation: slide-in 1s ease-in-out forwards;
+}
+.background-img1 img{
+    width: 100%; 
+    height: auto; 
+    display: block;
+}
+.pro-content{
+    color: white; 
+    text-align: center; 
+}
+.pro-content a{
+    color: #ffffff;
+    background-color: #182B4B;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.pro-content h4{
+    text-align: center;
+    padding: 5px;
+}
+marquee img{
+    margin-left: 30px;
+    border-radius: 10px;
+}
+.marque h2{
+    text-align: center;
+    padding: 10px;
+}
+@keyframes slide-in { 
+    from {
+         transform: translateX(-100%);
+          opacity: 0;
+         } to
+         {
+             transform: translateX(0); 
+             opacity: 1; 
+        } }
+
+
+        @media (max-width: 1060px) {
+            .projects-section{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                height: 50vh;
+                padding-bottom: 30px;
+            }
+           
+          }
+        
+          @media (max-width: 768px) {
+            .projects-section{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 85vh;
+          }}
+        
+          @media (max-width: 480px) {
+            .projects-section{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 145vh;
+            animation: fedUp 1s forwards;
+            padding-bottom: 30px;
+            }
+          }
+        
