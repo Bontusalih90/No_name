@@ -8,14 +8,14 @@ function Footer() {
     <div className='footer-section'>
       <div className="footer-content">
         <div className="footer-left">
-          <div className="logo">
-            <img src={assets.yourstech}alt="logo" />
-            <h4>At Yours Tech, we provide all-in-one Tech Solutions <br />Your Vision Is Our Mission</h4>
-          </div>
-          <h5> Follow Us</h5>
-          <div className="icons">
-            <a href=""><FaFacebook className='Fa'/></a>
           
+            <img src={assets.yourstech}alt="logo" />
+            <h4>At YoursTech, we provide all-in-one Tech Solutions <br />Your Vision Is Our Mission</h4>
+          
+          
+          <div className="icons">
+          <h5> Follow Us</h5>
+          <a href=""><FaFacebook className='Fa'/></a>
           <a href=""><FaInstagram className='Fa' /></a>
           <a href=""><FaTiktok className='Fa'/> </a>
           <a href=""><FaLinkedin className='Fa'/></a>
@@ -23,26 +23,18 @@ function Footer() {
           </div>
          
         </div>
-        <div className="footer-middle"></div>
+        <div className="footer-middle">
         <div className="services">
           <h4>Services</h4>
           <p>Web Development</p>
           <p>App Development</p>
           <p>Web Design </p>
-          <p>Digital Solutions</p>
+          <p>Digital Marketing Solutions</p>
           <p>Business Strategies</p>
         </div>
-        <div className="footer-right">
-           <h4>Company</h4>
-           <p>Blog</p>
-           <p>About</p>
-           <p>Contact</p>
-           <p>Vacancy</p>
-           <p>Privacy Policy</p>
-           <p>Terms and Conditions</p>
-
         </div>
       </div>
+      
       <p className='copy'>©2025 YoursTech. All Rights Reserved.</p>
     </div>
   )

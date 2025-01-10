@@ -30,7 +30,7 @@ function Testimonials() {
       
   return (
     <div className='testimonials-section'>
-        <h1>What Our Clients Say</h1>
+        <h3>What Our Clients Say</h3>
         
         <div className="test-card-section">
         <Slider {...settings}>

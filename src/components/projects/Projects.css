@@ -6,7 +6,7 @@
     height: 110vh;
     color: white;
 }
-.projects-section h1{
+.projects-section h2{
     text-align: center;
     padding: 10px;
     color:#ffffff;
@@ -59,6 +59,21 @@ marquee img{
     text-align: center;
     padding: 10px;
 }
+.card{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.card.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.hidden{
+    visibility: hidden;
+}
+.card.show.hidden{
+    visibility: visible;
+}
 @keyframes slide-in { 
     from {
          transform: translateX(-100%);
@@ -75,7 +90,7 @@ marquee img{
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                height: 50vh;
+                height: auto;
                 padding-bottom: 30px;
             }
            
@@ -86,7 +101,7 @@ marquee img{
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            height: 85vh;
+            height: auto;
           }}
         
           @media (max-width: 480px) {
@@ -94,8 +109,8 @@ marquee img{
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            height: 145vh;
-            animation: fedUp 1s forwards;
+            height: auto;
+            animation: fedIn 1s forwards;
             padding-bottom: 30px;
             }
           }

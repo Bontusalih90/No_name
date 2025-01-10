@@ -3,6 +3,7 @@
     background-color: #182B4B;
     color: white;
     padding: 30px;
+    
 
 }
 .about-page h2{
@@ -17,9 +18,14 @@
 }
 .service{
     display: flex;
-    width: 80%;
+    text-align: left;
+    align-items: center;
+    width: 90%;
     justify-content: space-around;
     margin: 0 auto;
+}
+.about-page p{
+    text-align: left;
 }
  h3{
     color: #20d7f3;
@@ -28,7 +34,7 @@
     display: flex;
     padding: 20px;
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
 }
 .why img{
     width: 400px;
@@ -36,14 +42,25 @@
     margin: 20px;
 }
 @media (max-width: 768px){
+    .about-page{
+        text-align: center;
+    }
+    
     .service{
+        display: flex;
         flex-wrap: wrap;
+       
+        
     }
     .why{
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
     }
     .why img{
         width: auto;
-        margin: 0;
+       
     }
 }

@@ -1,34 +1,159 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/images/logo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { assets } from "../../assets/assets";
 
 function Navbar() {
-  const navRef = useRef();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const showNavbar = () => {
-    navRef.current.classList.toggle('responsive_nav');
-    document.body.classList.toggle('no-scroll'); // Prevent body scrolling
-  }
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closemenu = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const navbarClasses = scrolled
+    ? "sticky-main-nav scrolled"
+    : "sticky-main-nav";
+
 
   return (
-    <div className='navbar-container'>
-      <div className="navbar-logo">
-        <img src={logo} alt="Logo" className="logo" />
+    <nav id="main-nav" className={navbarClasses}>
+    <div className="container">
+      <NavLink to="/" onClick={closemenu}>
+        <img
+          src={assets.yourstech}
+          alt="CyberNest"
+          className={`logo ${menuOpen ? "logo-center" : ""}`}
+        />
+      </NavLink>
+      <div
+        className={`menu-icon ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
       </div>
-      <nav ref={navRef}>
-        <ul className="navbar-menu">
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/projects">Projects</NavLink></li> {/* Link to the Projects page */}
-        <li><NavLink to="/contact">Contact</NavLink></li>
-          <button onClick={showNavbar} className='nav-btn nav-close-btn'><FaTimes /></button>
+      <div className={`dropdown-menu ${menuOpen ? "show" : ""}`}>
+        <ul>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "Current" : "half-header-link"
+              }
+              onClick={toggleMenu}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "Current" : "half-header-link"
+              }
+              onClick={toggleMenu}
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive ? "Current" : "half-header-link"
+              }
+              onClick={toggleMenu}
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "contact-current" : "half-header-link"
+              }
+              onClick={toggleMenu}
+            >
+              Contact Us
+            </NavLink>
+          </li>
         </ul>
-      </nav>
-      <button onClick={showNavbar} className='nav-btn'><FaBars /></button>
+      </div>
+      <ul>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "Current" : "half-header-link"
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "Current" : "half-header-link"
+            }
+          >
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? "Current" : "half-header-link"
+            }
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "contact-current" : "half-header-link"
+            }
+          >
+            Contact Us
+          </NavLink>
+        </li>
+      </ul>
     </div>
+  </nav>
   );
 }
 

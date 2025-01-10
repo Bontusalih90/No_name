@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Projects.css';
 import { assets } from '../../assets/assets';
 
 function Projects() {
+    useEffect(() => {
+      const cards = document.querySelectorAll('.card');
+  
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 } 
+      );
+  
+      cards.forEach((card) => observer.observe(card));
+  
+     
+      return () => {
+        cards.forEach((card) => observer.unobserve(card));
+      };
+    }, []); 
   return (
     <div className='projects-section'>
-        <h1>Some of Our Projects</h1>
+        <h2>Some of Our Projects</h2>
     <div className="project">
-        <div className="background-img1"> 
+        <div className="background-img1 card hidden"> 
         <a href="https://informativers.com/"><img src={assets.informativers} alt="" /></a>
         <div className="pro-content">
         <h4>Informativers</h4>
         <a href="https://informativers.com/">View Detail</a>
         </div>
       </div>
-        <div className="background-img1"> 
+        <div className="background-img1 card hidden"> 
         <a href="https://yegnajob.com//"><img src={assets.yegnajob} alt="" /></a>
         <div className="pro-content">
         <h4>Yegna Job</h4>
@@ -22,21 +44,21 @@ function Projects() {
         </div>
       </div>
      
-    <div className="background-img1"> 
+    <div className="background-img1 card hidden"> 
         <a href="https://jaalaladhugaa.com/"><img src={assets.jalaladhuga} alt="" /></a>
         <div className="pro-content">
         <h4>Jalala Dhugaa</h4>
         <a href="https://jaalaladhugaa.com/">View Detail</a>
         </div>
       </div>
-      <div className="background-img1"> 
+      <div className="background-img1 card hidden"> 
         <a href="https://abdiiluccee.com/"><img src={assets.abdilucce} alt="" /></a>
         <div className="pro-content">
         <h4>Abdii Luuccee</h4>
         <a href="https://abdiiluccee.com/">View Detail</a>
         </div>
       </div>
-      <div className="background-img1"> 
+      <div className="background-img1 card hidden"> 
         <a href="https://bontusalih90.github.io/Eluha-store/">
         <img src={assets.eluhastore} alt="" /></a>
         <div className="pro-content">
@@ -44,7 +66,7 @@ function Projects() {
         <a href="https://bontusalih90.github.io/Eluha-store/">View Detail</a>
         </div>
      </div>
-     <div className="background-img1"> 
+     <div className="background-img1 card hidden"> 
         <a href="https://bontusalih90.github.io/Babi-s-Coffee/"><img src={assets.babis} alt="" /></a>
         <div className="pro-content">
             <h4>Babi-s-Coffee</h4>

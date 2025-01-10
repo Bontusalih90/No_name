@@ -3,7 +3,7 @@
     color: white;
 }
 
-.testimonials-section h1 {
+.testimonials-section h3 {
     text-align: center;
     padding: 10px;
 }
@@ -14,7 +14,7 @@
     align-items: center;
     gap: 20px;
     padding: 10px;
-    width: 100%; /* Adjust to be responsive */
+    width: 100%; 
 }
 
 .test-card-section img {
@@ -87,7 +87,7 @@
     }
 
     .test-card1 {
-        width: 90%;
+        width: 80%;
         margin: 10px 0;
     }
 }
